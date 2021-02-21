@@ -1,6 +1,7 @@
 package no.mhl.wikitopics.api
 
 import no.mhl.wikitopics.api.common.Constants.ENDPOINT_API
+import no.mhl.wikitopics.model.WikiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,6 +20,6 @@ interface WikiService {
         @Query("prop") prop: String = "text",
         @Query("format") format: String = "json",
         @Query("page") page: String
-    ): Call<Any>
+    ): Call<WikiResponse>
 
 }

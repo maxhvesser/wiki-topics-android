@@ -30,7 +30,12 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.getPageButton.setOnClickListener {
-            onGetPageClicked()
+            if (binding.topicInputText.text.isNullOrEmpty()) {
+                binding.topicInputLayout.error = getString(R.string.error_empty)
+            } else {
+                binding.topicInputLayout.error = ""
+                onGetPageClicked()
+            }
         }
     }
     // endregion

@@ -43,14 +43,23 @@ class HomeActivity : AppCompatActivity() {
     // region View Interaction
     private fun onGetPageClicked() {
         val topic: String = binding.topicInputText.text.toString()
-
         model.pageForTopic(topic).observe(this, { resource ->
             when (resource.status) {
-                Status.Success -> {}
-                Status.ApiError -> {}
-                Status.NetworkError -> {}
+                Status.Success -> resource.data?.page?.text?.let { setResultsForText(topic, it.raw) }
+                Status.ApiError -> showMessageForError(getString(R.string.error_no_results))
+                Status.NetworkError -> showMessageForError(resource.throwable?.localizedMessage ?: "")
             }
         })
+    }
+
+    private fun setResultsForText(topic: String, text: String) {
+        binding.results.topicText.text = topic
+        binding.results.occurrencesText.text = "0"
+        binding.results.timeText.text = getString(R.string.result_time_template, 123)
+    }
+
+    private fun showMessageForError(message: String) {
+        binding.topicInputLayout.error = message
     }
     // endregion
 

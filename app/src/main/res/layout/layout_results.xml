@@ -70,5 +70,4 @@
         app:layout_constraintTop_toBottomOf="@id/occurrences_text"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

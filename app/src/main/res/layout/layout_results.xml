@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_topic"
+        style="@style/TextAppearance.MaterialComponents.Body2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
@@ -22,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Android"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -31,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_occurrences"
+        style="@style/TextAppearance.MaterialComponents.Body2"
         android:layout_marginTop="@dimen/small"
         app:layout_constraintTop_toBottomOf="@id/topic_title"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -39,6 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="94"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:textStyle="bold"
         android:layout_marginTop="@dimen/small"
         app:layout_constraintTop_toBottomOf="@id/topic_text"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -49,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_time"
+        style="@style/TextAppearance.MaterialComponents.Body2"
         android:layout_marginTop="@dimen/small"
         app:layout_constraintTop_toBottomOf="@id/occurrences_title"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -57,6 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="123 ms"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:textStyle="bold"
         android:layout_marginTop="@dimen/small"
         app:layout_constraintTop_toBottomOf="@id/occurrences_text"
         app:layout_constraintEnd_toEndOf="parent"/>

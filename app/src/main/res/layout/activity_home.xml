@@ -25,7 +25,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"/>
+                android:text="@string/app_name"
+                style="@style/TextAppearance.MaterialComponents.Headline6"/>
         </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,6 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/home_description"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:layout_marginTop="@dimen/regular"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
@@ -48,6 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/home_note"
+        style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_marginTop="@dimen/small"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
@@ -64,13 +67,16 @@
         android:layout_marginTop="@dimen/large"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintTop_toBottomOf="@id/note"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/topic_input_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Search Method -->
@@ -79,6 +85,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_method_title"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:layout_marginTop="@dimen/large"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
@@ -105,7 +112,8 @@
             android:paddingEnd="@dimen/small"
             android:checked="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
         <!-- Windowed -->
         <RadioButton
             android:id="@+id/radio_windowed"
@@ -113,7 +121,8 @@
             android:paddingStart="@dimen/small"
             android:paddingEnd="@dimen/small"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
         <!-- Regex -->
         <RadioButton
             android:id="@+id/radio_regex"
@@ -121,7 +130,8 @@
             android:paddingStart="@dimen/small"
             android:paddingEnd="@dimen/small"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
     </RadioGroup>
 
     <!-- Get Page Button -->

@@ -8,6 +8,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import no.mhl.wikitopics.R
 import no.mhl.wikitopics.api.common.Status
 import no.mhl.wikitopics.databinding.ActivityHomeBinding
+import no.mhl.wikitopics.util.checkedIndex
+import no.mhl.wikitopics.util.measureTimeMillis
+import kotlin.system.measureTimeMillis
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -54,8 +57,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setResultsForText(topic: String, text: String) {
         binding.results.topicText.text = topic
-        binding.results.occurrencesText.text = "0"
-        binding.results.timeText.text = getString(R.string.result_time_template, 123)
+        binding.results.occurrencesText.text = measureTimeMillis({ time ->
+            binding.results.timeText.text = getString(R.string.result_time_template, time)
+        }) {
+            model.occurrencesForSelection(binding.searchMethodRadioGroup.checkedIndex(), text, topic)
+        }.toString()
     }
 
     private fun showMessageForError(message: String) {

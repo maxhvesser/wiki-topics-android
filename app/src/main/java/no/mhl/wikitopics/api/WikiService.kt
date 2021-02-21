@@ -9,9 +9,9 @@ import retrofit2.http.Query
 interface WikiService {
 
     /**
-     * Remote call to get a Wiki page response object from a given topic
+     * Remote call to get a Wikipedia page response object from a given topic
      * @param page The topic for which page we want to be returned
-     * @return The response [Any] wrapped in a [Call]
+     * @return The response [WikiResponse] wrapped in a [Call]
      */
     @GET(ENDPOINT_API)
     fun getWikiPageForTopic(

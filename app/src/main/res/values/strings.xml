@@ -1,3 +1,12 @@
 <resources>
+
+    <!-- region General -->
     <string name="app_name">Wiki Topics</string>
+    <!-- endregion -->
+
+    <!-- region Home -->
+    <string name="topic_input_label">Enter a topic</string>
+    <string name="get_page_button_label">Get page for topic</string>
+    <!-- endregion -->
+
 </resources>

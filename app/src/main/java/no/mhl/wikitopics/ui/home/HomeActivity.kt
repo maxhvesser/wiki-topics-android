@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import dagger.hilt.android.AndroidEntryPoint
 import no.mhl.wikitopics.R
+import no.mhl.wikitopics.api.common.Status
 import no.mhl.wikitopics.databinding.ActivityHomeBinding
 
 @AndroidEntryPoint
@@ -24,6 +25,27 @@ class HomeActivity : AppCompatActivity() {
         model = ViewModelProvider(this).get()
 
         setContentView(binding.root)
+        setupViews()
+    }
+
+    private fun setupViews() {
+        binding.getPageButton.setOnClickListener {
+            onGetPageClicked()
+        }
+    }
+    // endregion
+
+    // region View Interaction
+    private fun onGetPageClicked() {
+        val topic: String = binding.topicInputText.text.toString()
+
+        model.pageForTopic(topic).observe(this, { resource ->
+            when (resource.status) {
+                Status.Success -> {}
+                Status.ApiError -> {}
+                Status.NetworkError -> {}
+            }
+        })
     }
     // endregion
 

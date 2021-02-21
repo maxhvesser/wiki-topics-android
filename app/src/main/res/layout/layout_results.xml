@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/regular">
+
+    <!-- Topic -->
+    <TextView
+        android:id="@+id/topic_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result_topic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/topic_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Android"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Occurrences -->
+    <TextView
+        android:id="@+id/occurrences_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result_occurrences"
+        android:layout_marginTop="@dimen/small"
+        app:layout_constraintTop_toBottomOf="@id/topic_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/occurrences_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="94"
+        android:layout_marginTop="@dimen/small"
+        app:layout_constraintTop_toBottomOf="@id/topic_text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Search Time -->
+    <TextView
+        android:id="@+id/time_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result_time"
+        android:layout_marginTop="@dimen/small"
+        app:layout_constraintTop_toBottomOf="@id/occurrences_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="123 ms"
+        android:layout_marginTop="@dimen/small"
+        app:layout_constraintTop_toBottomOf="@id/occurrences_text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

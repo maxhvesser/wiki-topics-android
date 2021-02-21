@@ -7,6 +7,22 @@
     <!-- region Home -->
     <string name="topic_input_label">Enter a topic</string>
     <string name="get_page_button_label">Get page for topic</string>
+
+    <string name="home_description">Enter a topic and click get to be returned a count for how many times the given string \"topic\" appears in the corresponding Wikipedia page.</string>
+    <string name="home_note">Note: The search is case-sensitive</string>
+
+    <string name="search_method_title">Search Method</string>
+    <string name="search_method_index">Index Of</string>
+    <string name="search_method_windowed">Windowed</string>
+    <string name="search_method_regex">Regex</string>
+
+    <string name="result_topic">Topic:</string>
+    <string name="result_occurrences">Occurrences:</string>
+    <string name="result_time">Search time:</string>
+    <string name="result_time_template">%1$d ms</string>
+
+    <string name="error_empty">Please enter a topic</string>
+    <string name="error_no_results">No results were found for the given topic</string>
     <!-- endregion -->
 
 </resources>

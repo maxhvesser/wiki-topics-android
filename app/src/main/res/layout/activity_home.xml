@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,16 +8,56 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeActivity">
 
-    <!-- Topic Input Field -->
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/app_name"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_description"
+        android:layout_marginTop="@dimen/regular"
+        android:layout_marginStart="@dimen/regular"
+        android:layout_marginEnd="@dimen/regular"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Note -->
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_note"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginStart="@dimen/regular"
+        android:layout_marginEnd="@dimen/regular"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Topic Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/topic_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/topic_input_label"
-        android:layout_marginTop="@dimen/regular"
+        android:layout_marginTop="@dimen/large"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <com.google.android.material.textfield.TextInputEditText
@@ -24,6 +65,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Search Method -->
+    <TextView
+        android:id="@+id/search_method_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_method_title"
+        android:layout_marginTop="@dimen/large"
+        android:layout_marginStart="@dimen/regular"
+        android:layout_marginEnd="@dimen/regular"
+        app:layout_constraintTop_toBottomOf="@id/topic_input_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Search Methods -->
+    <RadioGroup
+        android:id="@+id/search_method_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/regular"
+        android:layout_marginStart="@dimen/regular"
+        android:layout_marginEnd="@dimen/regular"
+        app:layout_constraintTop_toBottomOf="@id/search_method_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <!-- Index -->
+        <RadioButton
+            android:id="@+id/radio_index"
+            android:text="@string/search_method_index"
+            android:paddingStart="@dimen/small"
+            android:paddingEnd="@dimen/small"
+            android:checked="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <!-- Windowed -->
+        <RadioButton
+            android:id="@+id/radio_windowed"
+            android:text="@string/search_method_windowed"
+            android:paddingStart="@dimen/small"
+            android:paddingEnd="@dimen/small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <!-- Regex -->
+        <RadioButton
+            android:id="@+id/radio_regex"
+            android:text="@string/search_method_regex"
+            android:paddingStart="@dimen/small"
+            android:paddingEnd="@dimen/small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
 
     <!-- Get Page Button -->
     <Button
@@ -34,7 +126,20 @@
         android:layout_marginTop="@dimen/regular"
         android:layout_marginStart="@dimen/regular"
         android:layout_marginEnd="@dimen/regular"
-        app:layout_constraintTop_toBottomOf="@id/topic_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/search_method_radio_group"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Results -->
+    <include
+        android:id="@+id/results"
+        layout="@layout/layout_results"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/regular"
+        android:layout_marginStart="@dimen/regular"
+        android:layout_marginEnd="@dimen/regular"
+        app:layout_constraintTop_toBottomOf="@id/get_page_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- region Component -->
+    <color name="surface">@color/codGray</color>
+    <color name="background">@color/black</color>
+    <!-- endregion -->
+
+</resources>

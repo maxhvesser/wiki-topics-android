@@ -10,7 +10,6 @@ import no.mhl.wikitopics.api.common.Status
 import no.mhl.wikitopics.databinding.ActivityHomeBinding
 import no.mhl.wikitopics.util.checkedIndex
 import no.mhl.wikitopics.util.measureTimeMillis
-import kotlin.system.measureTimeMillis
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
